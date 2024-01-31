@@ -1,0 +1,84 @@
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Registro de Usuarios</title>
+   
+</head>
+<section class="vh-100 bg-image" style="background-color:#d6d0d0">
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+<div class="container h-100">
+<section class="vh-100">
+   <div class="container py-5 h-100">
+   <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-9">
+         <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+               <div class="col-lg-6 d-none d-md-block">
+                  <img src="{% static 'images/log.jpg'%}"
+                     alt="login form" class="img-fluid" style="width: 100%; height: 92%; padding-left: 40px; padding-top: 80px; border-radius: 1rem; " />
+               </div>
+               <div style="padding-top: 30px; " class="col-lg-6 d-flex align-items-center">
+                  <div class="card-body  text-black">
+                     <h2 class="text-uppercase text-center mb-4">Crea una Cuenta</h2>
+                     {% if form.errors %}
+                     {% for field in form %}
+                     {% for error in field.errors %}
+                     <div class="alert alert-danger">
+                        <strong>{{ field.label }}</strong> {{ error }}
+                     </div>
+                     {% endfor %}
+                     {% endfor %}
+                     {% endif %}
+                     <form method="post" >
+                        <div class="form-outline  ">
+                           {% csrf_token %}
+                           <input type="text" placeholder="Ingrese su identificación" style="text-align: center;" name="dni" id="dni" class="form-control form-control-lg" />
+                           <label class="form-label" ></label>
+                        </div>
+                        <div class="form-outline ">
+                           <input type="text" placeholder="Ingrese su nombre"style="text-align: center;" name="nombres" id="nombres" class="form-control form-control-lg" />
+                           <label class="form-label" ></label>
+                        </div>
+                        <div class="form-outline ">
+                           <input type="text" placeholder="Ingrese su apellido"style="text-align: center;" name="apellidos" id="apellidos" class="form-control form-control-lg" />
+                           <label class="form-label" ></label>
+                        </div>
+                        <div class="form-outline ">
+                           <input type="text" placeholder="Ingrese su email"style="text-align: center;" name="email" id="email" class="form-control form-control-lg" />
+                           <label class="form-label" ></label>
+                        </div>
+                        <div style="text-align: center;" class="form-control form-control-lg">
+                           documento:
+                           {{ form.tipo_documento }}
+                           {% for i in consulta_documento %}
+                           {{i.consulta_documento}}
+                           {% endfor %}
+                        </div>
+                        <div class="form-outline ">
+                           <input type="password" placeholder="Ingrese su Contraseña"style="text-align: center;" name="password1" id="password1" class="form-control form-control-lg" />
+                           <label class="form-label" ></label>
+                        </div>
+                        <div class="form-outline ">
+                           <input type="password" placeholder="Repite Tu contraseña"style="text-align: center;" name="password2" id="password2" class="form-control form-control-lg" />
+                           <label class="form-label" ></label>
+                        </div>
+                        <div class="pt-1 mb-4">
+                           <button  class="btn btn-success btn-lg btn-block"
+                              type="submit">Registro</button>
+                           <a href="{% url 'login' %}">Volver</a>
+                     </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
