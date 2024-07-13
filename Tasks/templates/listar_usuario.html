@@ -1,0 +1,128 @@
+{% extends './base.html' %}
+{% load static %}
+{% block title %}
+<title>Listado de Usuarios</title>
+<!-- sweet alert)-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock title %}
+
+{% block content %}
+
+<div class="card card-rounded">
+  <div class="card-body">
+    <div class="d-sm-flex justify-content-between align-items-start">
+      <div>
+        <h4 class="card-title card-title-dash">Usuarios activos</h4>
+       <p class="card-subtitle card-subtitle-dash">Panel Administrativo de usuarios </p>
+      </div>
+      <div>
+        <button onclick="abrir_modal_creacion('{% url 'Tasks:crear_usuarios' %}')" class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Agregar nuevo usuario </button> 
+      </div>
+    </div>
+    <div class="table-responsive  mt-1">
+      <table class="table select-table">
+        <thead>
+            <tr>
+                <th>Nombres y apellidos</th>
+                <th>Documento</th>
+                <th>Correo electrónico</th>
+                <th>Fecha de Creación</th>
+                <th>Estado</th>
+                <th style="text-align: center;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in object_list %}
+            <tr>
+                <td>
+                    <h6>{{ c.nombres }} {{ c.apellidos }}</h6>
+                </td>
+                <td>
+                    <h6>{{ c.dni }}</h6>
+                    <p>{{ c.tipo_documento }}</p>
+                </td>
+                <td>
+                    <h6>{{ c.email }}</h6>
+                    <p>company type</p>
+                </td>
+                <td>
+                    <div class="badge badge-opacity-warning">{{ c.fecha_creacion }}</div>
+                </td>
+                <td>
+                    <div class="{% if c.is_active %}badge badge-opacity-success{% else %}badge bg-danger text-black{% endif %}">
+                        {% if c.is_active %}
+                        Activo
+                        {% else %}
+                        Inactivo
+                        {% endif %}
+                    </div>
+                </td>
+                <td>
+                    <button onclick="abrir_modal_edicion('{% url 'Tasks:actualizar_usuario' pk=c.pk %}')" class="btn btn-primary">Editar</button>
+                    <button onclick="abrir_modal_eliminar('{% url 'Tasks:eliminar_usuario' pk=c.pk %}')" class="btn btn-danger">Eliminar</button>
+                    
+                    {% if c.is_active %}
+                        <a class="btn btn-danger" href="{% url 'Tasks:deshabilitar_usuario' id=c.pk %}" >Deshabilitar</a>
+                    {% else %}
+                        <a class="btn btn-success" href="{% url 'Tasks:habilitar_usuario' id=c.pk %}">Habilitar</a>
+                    {% endif %}
+                    
+                    
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="creacion" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!-- primer paso para crear el modal -->
+<div class="modal fade" id="edicion" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="eliminar" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+{% endblock  %}
+<!-- Segundo paso para crear el modal -->
+{% block extrajs  %}
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function abrir_modal_edicion(url) {
+        $('#edicion .modal-content').load(url, function() {
+            $('#edicion').modal('show'); // Mostrar el modal después de cargar el contenido
+        });
+    }
+</script>
+<!-- modal para crear usuarios -->
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function abrir_modal_creacion(url) {
+        $('#creacion .modal-content').load(url, function() {
+            $('#creacion').modal('show'); 
+        });
+    }
+</script>
+<!-- modal para eliminar usuarios -->
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function abrir_modal_eliminar(url) {
+        $('#eliminar .modal-content').load(url, function() {
+            $('#eliminar').modal('show'); 
+        });
+    }
+</script>
+
+{% endblock extrajs  %}

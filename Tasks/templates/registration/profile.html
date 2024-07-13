@@ -6,7 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Sniper Team Academy </title>
+  <title>Marketing Para Todos</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
@@ -96,7 +96,7 @@
               <input type="search" class="form-control" placeholder="Search Here" title="Search here">
             </form>
           </li>
-          <li class="nav-item dropdown">
+          {% comment %} <li class="nav-item dropdown">
             <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
               <i class="icon-mail icon-lg"></i>
             </a>
@@ -133,8 +133,8 @@
                 </div>
               </a>
             </div>
-          </li>
-          <li class="nav-item dropdown"> 
+          </li> {% endcomment %}
+          {% comment %} <li class="nav-item dropdown"> 
             <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="icon-bell"></i>
               <span class="count"></span>
@@ -173,7 +173,7 @@
                 </div>
               </a>
             </div>
-          </li>
+          </li> {% endcomment %}
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{% static 'images/faces/face8.jpg' %}" alt="Profile image"> </a>
@@ -184,8 +184,8 @@
                 <p class="fw-light text-muted mb-0">{{user.email}} </p>
               </div>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
+              {% comment %} <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a> {% endcomment %}
               <a class="dropdown-item" href="{% url 'logout' %}">
                 <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>
                 Cerrar Sesión
@@ -373,12 +373,12 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
+          {% comment %} <li class="nav-item">
             <a class="nav-link" href="index.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
-          </li>
+          </li> {% endcomment %}
           {% comment %} <li class="nav-item nav-category">UI Elements</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -394,8 +394,8 @@
               </ul>
             </div> {% endcomment %}
           </li>
-          <li class="nav-item nav-category">Forms and Datas</li>
-          <li class="nav-item">
+          <li class="nav-item nav-category">Categorías</li>
+          {% comment %} <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="menu-icon mdi mdi-card-text-outline"></i>
               <span class="menu-title">Form elements</span>
@@ -406,7 +406,7 @@
                 <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
               </ul>
             </div>
-          </li>
+          </li> {% endcomment %}
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="menu-icon mdi mdi-chart-line"></i>
@@ -458,7 +458,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item nav-category">pages</li>
+          {% comment %} <li class="nav-item nav-category">pages</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="menu-icon mdi mdi-account-circle-outline"></i>
@@ -469,15 +469,15 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
               </ul>
-            </div>
+            </div> {% endcomment %}
           </li>
-          <li class="nav-item nav-category">help</li>
+          {% comment %} <li class="nav-item nav-category">help</li>
           <li class="nav-item">
             <a class="nav-link" href="">
               <i class="menu-icon mdi mdi-file-document"></i>
               <span class="menu-title">Documentation</span>
             </a>
-          </li>
+          </li> {% endcomment %}
         </ul>
       </nav>
       <!-- partial -->
@@ -502,13 +502,13 @@
                     </li>
                   </ul> {% endcomment %}
                  
-                  <div>
+                  {% comment %} <div>
                     <div class="btn-wrapper">
                       <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
                       <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i> Print</a>
                       <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
                     </div>
-                  </div>
+                  </div> {% endcomment %}
                 </div>
                 <div class="tab-content tab-content-basic">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
@@ -561,20 +561,20 @@
                               <div class="card-body">
                                 <div class="d-sm-flex justify-content-between align-items-start">
                                   <div>
-                                    <h4 class="card-title card-title-dash">Market Overview</h4>
-                                   <p class="card-subtitle card-subtitle-dash">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                                    <h4 class="card-title card-title-dash">Ganancias del mes</h4>
+                                   <p class="card-subtitle card-subtitle-dash">Gráfico de las ganancias </p>
                                   </div>
                                   <div>
                                     <div class="dropdown">
-                                      <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> This month </button>
-                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                      <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Este Mes </button>
+                                      {% comment %} <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                         <h6 class="dropdown-header">Settings</h6>
                                         <a class="dropdown-item" href="#">Action</a>
                                         <a class="dropdown-item" href="#">Another action</a>
                                         <a class="dropdown-item" href="#">Something else here</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#">Separated link</a>
-                                      </div>
+                                      </div> {% endcomment %}
                                     </div>
                                   </div>
                                 </div>
@@ -589,7 +589,7 @@
                             </div>
                           </div>
                         </div>
-                      
+{% comment %}                       
                         <div class="row flex-grow">
                           <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
@@ -791,21 +791,21 @@
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> {% endcomment %}
                         <div class="row flex-grow">
                           <div class="col-md-6 col-lg-6 grid-margin stretch-card">
                             <div class="card card-rounded">
                               <div class="card-body card-rounded">
-                                <h4 class="card-title  card-title-dash">Recent Events</h4>
+                                <h4 class="card-title  card-title-dash">Eventos Recientes</h4>
                                 <div class="list align-items-center border-bottom py-2">
                                   <div class="wrapper w-100">
                                     <p class="mb-2 font-weight-medium">
-                                      Change in Directors
+                                      Cambios de Algoritmos
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center">
                                         <i class="mdi mdi-calendar text-muted me-1"></i>
-                                        <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
+                                        <p class="mb-0 text-small text-muted">Enero 24, 2024</p>
                                       </div>
                                     </div>
                                   </div>
@@ -813,12 +813,12 @@
                                 <div class="list align-items-center border-bottom py-2">
                                   <div class="wrapper w-100">
                                     <p class="mb-2 font-weight-medium">
-                                      Other Events
+                                      Otros eventos
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center">
                                         <i class="mdi mdi-calendar text-muted me-1"></i>
-                                        <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
+                                        <p class="mb-0 text-small text-muted">Julio 10, 2024</p>
                                       </div>
                                     </div>
                                   </div>
@@ -826,12 +826,12 @@
                                 <div class="list align-items-center border-bottom py-2">
                                   <div class="wrapper w-100">
                                     <p class="mb-2 font-weight-medium">
-                                      Quarterly Report
+                                      Reportes mensuales
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center">
                                         <i class="mdi mdi-calendar text-muted me-1"></i>
-                                        <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
+                                        <p class="mb-0 text-small text-muted">Marzo 14, 2024</p>
                                       </div>
                                     </div>
                                   </div>
@@ -839,12 +839,12 @@
                                 <div class="list align-items-center border-bottom py-2">
                                   <div class="wrapper w-100">
                                     <p class="mb-2 font-weight-medium">
-                                      Change in Directors
+                                      Cambios de Horarios
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center">
                                         <i class="mdi mdi-calendar text-muted me-1"></i>
-                                        <p class="mb-0 text-small text-muted">Mar 14, 2019</p>
+                                        <p class="mb-0 text-small text-muted">Junio 14, 2024</p>
                                       </div>
                                     </div>
                                   </div>
@@ -853,7 +853,7 @@
                                 <div class="list align-items-center pt-3">
                                   <div class="wrapper w-100">
                                     <p class="mb-0">
-                                      <a href="#" class="fw-bold text-primary">Show all <i class="mdi mdi-arrow-right ms-2"></i></a>
+                                      <a href="#" class="fw-bold text-primary">Mostrar Todos <i class="mdi mdi-arrow-right ms-2"></i></a>
                                     </p>
                                   </div>
                                 </div>
@@ -864,49 +864,49 @@
                             <div class="card card-rounded">
                               <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between mb-3">
-                                  <h4 class="card-title card-title-dash">Activities</h4>
-                                  <p class="mb-0">20 finished, 5 remaining</p>
+                                  <h4 class="card-title card-title-dash">Actividades a realizar</h4>
+                                  <p class="mb-0">20 finalizadas, 5 restantes</p>
                                 </div>
                                 <ul class="bullet-line-list">
                                   <li>
                                     <div class="d-flex justify-content-between">
-                                      <div><span class="text-light-green">Ben Tossell</span> assign you a task</div>
-                                      <p>Just now</p>
+                                      <div><span class="text-light-green">Ben Tossell</span> Asigno una tarea</div>
+                                      <p>Justo ahora</p>
                                     </div>
                                   </li>
                                   <li>
                                     <div class="d-flex justify-content-between">
-                                      <div><span class="text-light-green">Oliver Noah</span> assign you a task</div>
+                                      <div><span class="text-light-green">Oliver Noah</span> Asignó una tarea</div>
                                       <p>1h</p>
                                     </div>
                                   </li>
                                   <li>
                                     <div class="d-flex justify-content-between">
-                                      <div><span class="text-light-green">Jack William</span> assign you a task</div>
+                                      <div><span class="text-light-green">Jack William</span> Asignó una tarea</div>
                                       <p>1h</p>
                                     </div>
                                   </li>
                                   <li>
                                     <div class="d-flex justify-content-between">
-                                      <div><span class="text-light-green">Leo Lucas</span> assign you a task</div>
+                                      <div><span class="text-light-green">Leo Lucas</span> Asignó una tarea</div>
                                       <p>1h</p>
                                     </div>
                                   </li>
                                   <li>
                                     <div class="d-flex justify-content-between">
-                                      <div><span class="text-light-green">Thomas Henry</span> assign you a task</div>
+                                      <div><span class="text-light-green">Thomas Henry</span> Asignó una tarea</div>
                                       <p>1h</p>
                                     </div>
                                   </li>
                                   <li>
                                     <div class="d-flex justify-content-between">
-                                      <div><span class="text-light-green">Ben Tossell</span> assign you a task</div>
+                                      <div><span class="text-light-green">Ben Tossell</span> Asignó una tarea</div>
                                       <p>1h</p>
                                     </div>
                                   </li>
                                   <li>
                                     <div class="d-flex justify-content-between">
-                                      <div><span class="text-light-green">Ben Tossell</span> assign you a task</div>
+                                      <div><span class="text-light-green">Ben Tossell</span> Asignó una tarea</div>
                                       <p>1h</p>
                                     </div>
                                   </li>
@@ -914,7 +914,7 @@
                                 <div class="list align-items-center pt-3">
                                   <div class="wrapper w-100">
                                     <p class="mb-0">
-                                      <a href="#" class="fw-bold text-primary">Show all <i class="mdi mdi-arrow-right ms-2"></i></a>
+                                      <a href="#" class="fw-bold text-primary">Mostrar Todo <i class="mdi mdi-arrow-right ms-2"></i></a>
                                     </p>
                                   </div>
                                 </div>
@@ -931,7 +931,7 @@
                                 <div class="row">
                                   <div class="col-lg-12">
                                     <div class="d-flex justify-content-between align-items-center">
-                                      <h4 class="card-title card-title-dash">Todo list</h4>
+                                      <h4 class="card-title card-title-dash">Lista de Tareas</h4>
                                       <div class="add-items d-flex mb-0">
                                         <!-- <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?"> -->
                                         <button class="add btn btn-icons btn-rounded btn-primary todo-list-add-btn text-white me-0 pl-12p"><i class="mdi mdi-plus"></i></button>
@@ -942,11 +942,11 @@
                                         <li class="d-block">
                                           <div class="form-check w-100">
                                             <label class="form-check-label">
-                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                              <input class="checkbox" type="checkbox"> Marcar minimos y maximos historicos en sus pares preferidos <i class="input-helper rounded"></i>
                                             </label>
                                             <div class="d-flex mt-2">
-                                              <div class="ps-4 text-small me-3">24 June 2020</div>
-                                              <div class="badge badge-opacity-warning me-3">Due tomorrow</div>
+                                              <div class="ps-4 text-small me-3">24 Junio 2020</div>
+                                              <div class="badge badge-opacity-warning me-3">Plazo hasta mañana</div>
                                               <i class="mdi mdi-flag ms-2 flag-color"></i>
                                             </div>
                                           </div>
@@ -954,33 +954,33 @@
                                         <li class="d-block">
                                           <div class="form-check w-100">
                                             <label class="form-check-label">
-                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                              <input class="checkbox" type="checkbox"> visualizar noticias en forex <i class="input-helper rounded"></i>
                                             </label>
                                             <div class="d-flex mt-2">
-                                              <div class="ps-4 text-small me-3">23 June 2020</div>
-                                              <div class="badge badge-opacity-success me-3">Done</div>
+                                              <div class="ps-4 text-small me-3">23 Junio 2020</div>
+                                              <div class="badge badge-opacity-success me-3">Echo</div>
                                             </div>
                                           </div>
                                         </li>
                                         <li>
                                           <div class="form-check w-100">
                                             <label class="form-check-label">
-                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                              <input class="checkbox" type="checkbox">Revisar lojates utilizados <i class="input-helper rounded"></i>
                                             </label>
                                             <div class="d-flex mt-2">
-                                              <div class="ps-4 text-small me-3">24 June 2020</div>
-                                              <div class="badge badge-opacity-success me-3">Done</div>
+                                              <div class="ps-4 text-small me-3">24 Junio 2020</div>
+                                              <div class="badge badge-opacity-success me-3">Echo</div>
                                             </div>
                                           </div>
                                         </li>
                                         <li class="border-bottom-0">
                                           <div class="form-check w-100">
                                             <label class="form-check-label">
-                                              <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                              <input class="checkbox" type="checkbox"> Marcar  <i class="input-helper rounded"></i>
                                             </label>
                                             <div class="d-flex mt-2">
-                                              <div class="ps-4 text-small me-3">24 June 2020</div>
-                                              <div class="badge badge-opacity-danger me-3">Expired</div>
+                                              <div class="ps-4 text-small me-3">24 Junio 2020</div>
+                                              <div class="badge badge-opacity-danger me-3">Caducado</div>
                                             </div>
                                           </div>
                                         </li>
@@ -992,9 +992,6 @@
                             </div>
                           </div>
                         </div>
-                      
-                     
-                        
                         <div class="row flex-grow">
                           <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
@@ -1003,7 +1000,7 @@
                                   <div class="col-lg-12">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                       <div>
-                                        <h4 class="card-title card-title-dash">Top Performer</h4>
+                                        <h4 class="card-title card-title-dash">Top Traders </h4>
                                       </div>
                                     </div>
                                     <div class="mt-3">
@@ -1012,11 +1009,11 @@
                                           <img class="img-sm rounded-10" src="{% static 'images/faces/face1.jpg' %}" alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Brandon Washington</p>
-                                            <small class="text-muted mb-0">162543</small>
+                                            {% comment %} <small class="text-muted mb-0">162543</small> {% endcomment %}
                                           </div>
                                         </div>
                                         <div class="text-muted text-small">
-                                          1h ago
+                                          1h 
                                         </div>
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
@@ -1024,11 +1021,11 @@
                                           <img class="img-sm rounded-10" src="{% static 'images/faces/face2.jpg' %}" alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Wayne Murphy</p>
-                                            <small class="text-muted mb-0">162543</small>
+                                            {% comment %} <small class="text-muted mb-0">162543</small> {% endcomment %}
                                           </div>
                                         </div>
                                         <div class="text-muted text-small">
-                                          1h ago
+                                          1h 
                                         </div>
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
@@ -1036,11 +1033,11 @@
                                           <img class="img-sm rounded-10" src="{% static 'images/faces/face3.jpg' %}" alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Katherine Butler</p>
-                                            <small class="text-muted mb-0">162543</small>
+                                            {% comment %} <small class="text-muted mb-0">162543</small> {% endcomment %}
                                           </div>
                                         </div>
                                         <div class="text-muted text-small">
-                                          1h ago
+                                          1h 
                                         </div>
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
@@ -1048,11 +1045,11 @@
                                           <img class="img-sm rounded-10" src="{% static 'images/faces/face4.jpg' %}" alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Matthew Bailey</p>
-                                            <small class="text-muted mb-0">162543</small>
+                                            {% comment %} <small class="text-muted mb-0">162543</small> {% endcomment %}
                                           </div>
                                         </div>
                                         <div class="text-muted text-small">
-                                          1h ago
+                                          1h 
                                         </div>
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between pt-2">
@@ -1060,11 +1057,11 @@
                                           <img class="img-sm rounded-10" src="{% static 'images/faces/face5.jpg' %}" alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Rafell John</p>
-                                            <small class="text-muted mb-0">Alaska, USA</small>
+                                            {% comment %} <small class="text-muted mb-0">Alaska, USA</small> {% endcomment %}
                                           </div>
                                         </div>
                                         <div class="text-muted text-small">
-                                          1h ago
+                                          1h 
                                         </div>
                                       </div>
                                     </div>
@@ -1086,8 +1083,8 @@
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"> <a href="https://www.bootstrapdash.com/" target="_blank"></a> </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2024. All rights reserved.</span>
           </div>
         </footer>
         <!-- partial -->

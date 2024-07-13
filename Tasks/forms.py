@@ -45,4 +45,17 @@ class UsuarioexternoForm(UserCreationForm):
 class Usuariosform(forms.ModelForm):
     class Meta:
         model=Usuario
-        fields=('dni','nombres','apellidos','email','tipo_documento')    
+        fields=('dni','nombres','apellidos','email','tipo_documento') 
+
+
+class Usuarioform(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields=('dni','nombres','apellidos','email','tipo_documento')
+        label = {
+            'dni':'documento de la persona',
+            'nombres':'nombres de la persona',
+            'apellidos':'apellidos de la persona',
+            'email':'email de la persona',
+            'documento':'documento de la persona',
+        }         

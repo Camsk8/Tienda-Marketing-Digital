@@ -6,7 +6,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title></title>
+  {% block title %}<title> </title>{% endblock %}
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
@@ -23,9 +24,13 @@
   <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{% static 'images/logopeque.jpg'%}" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <div class="container-scroller"> 
     <!-- partial:partials/_navbar.html -->
@@ -436,7 +441,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item nav-category">pages</li>
+          {% comment %} <li class="nav-item nav-category">pages</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="menu-icon mdi mdi-account-circle-outline"></i>
@@ -447,7 +452,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
               </ul>
-            </div>
+            </div> {% endcomment %}
           {% comment %} </li>
           <li class="nav-item nav-category">help</li>
           <li class="nav-item">
@@ -473,14 +478,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-content tab-content-basic">
+                {% comment %} <div class="tab-content tab-content-basic">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
                     <div class="row">
                       <div class="col-sm-12">
                         <div class="statistics-details d-flex align-items-center justify-content-between">
                         </div>
                       </div>
-                    </div> 
+                    </div>  {% endcomment %}
                         </div>
                       </div>
                       <div class="col-lg-4 d-flex flex-column">
@@ -575,6 +580,9 @@
   <script src="{% static 'js/dashboard.js' %}"></script>
   <script src="{% static 'js/Chart.roundedBarCharts.js' %}"></script>
   <!-- End custom js for this page-->
+  {% block extrajs  %}
+  {% endblock extrajs  %}
+
 </body>
 
 </html>
